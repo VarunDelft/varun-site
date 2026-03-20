@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
  
 export async function GET(context) {
-  const posts = import.meta.glob('../content/blog/*.{md,mdx}', { eager: true });
+  const posts = import.meta.glob('./blog/*.{md,mdx}', { eager: true });
   const items = Object.values(posts).map((post: any) => ({
     title: post.frontmatter.title,
     description: post.frontmatter.description ?? '',
