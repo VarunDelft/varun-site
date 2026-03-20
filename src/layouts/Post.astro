@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+const { frontmatter } = Astro.props;
+const { title, description, date, tags = [] } = frontmatter;
+const formatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title={title} description={description}>
+  <div class="container post-wrap">
+    <a href="/writing" class="back-link">← All posts</a>
+    <header class="post-header">
+      <div class="post-tags">
+        {tags.map((t: string) => <span class="tag tag--accent">{t}</span>)}
+      </div>
+      <h1 class="post-title">{title}</h1>
+      <p class="post-meta">{formatted}</p>
+    </header>
+    <div class="prose post-body">
+      <slot />
+    </div>
+  </div>
+</Base>
+
+<style>
+.post-wrap { padding: 3rem 0 5rem; max-width: 660px; }
+.back-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--ink-tertiary);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+}
+.back-link:hover { color: var(--ink); opacity: 1; }
+.post-header { margin-bottom: 3rem; }
+.post-tags { display: flex; gap: 0.4rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.post-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.post-meta { font-size: 0.8rem; color: var(--ink-tertiary); }
+</style>

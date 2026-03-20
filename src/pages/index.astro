@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Home" description="Varun Nair — Solutions Architect writing about telecoms, cloud and AI.">
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow fade-up">Solutions Architect · Zoetermeer, NL</p>
+      <h1 class="hero-headline fade-up fade-up-1">
+        Building networks.<br/>
+        <em>Writing about what I learn.</em>
+      </h1>
+      <p class="hero-body fade-up fade-up-2">
+        I'm Varun — a software developer and architect with 10+ years in telecoms and cloud.
+        This is where I document ideas, share learnings, and occasionally think out loud.
+      </p>
+      <div class="hero-actions fade-up fade-up-3">
+        <a href="/about" class="btn btn--primary">About me</a>
+        <a href="/writing" class="btn btn--ghost">Read the blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="interests">
+    <div class="container">
+      <p class="section-eyebrow">What I write about</p>
+      <div class="interest-grid">
+        <div class="interest-card">
+          <span class="interest-num">01</span>
+          <h3>Telecoms & networks</h3>
+          <p>Deep dives into fixed and wireless networks, orchestration, and the standards behind them.</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-num">02</span>
+          <h3>Java & software craft</h3>
+          <p>Spring Boot patterns, microservices design, DevSecOps, and lessons from production systems.</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-num">03</span>
+          <h3>Cloud & AI</h3>
+          <p>AWS architecture, LLM-powered applications, and the practical side of Generative AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="recent">
+    <div class="container">
+      <div class="recent-header">
+        <p class="section-eyebrow">Recent writing</p>
+        <a href="/writing" class="see-all">All posts →</a>
+      </div>
+      <div class="placeholder-posts">
+        <p class="placeholder-text">Posts will appear here once you start writing. <a href="/writing">See the writing page →</a></p>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+.hero {
+  padding: 7rem 0 5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1.5rem;
+}
+.hero-headline {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--ink-secondary);
+}
+.hero-body {
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn--primary:hover { opacity: 0.85; }
+.btn--ghost {
+  border: 1px solid var(--rule);
+  color: var(--ink-secondary);
+}
+.btn--ghost:hover {
+  border-color: var(--ink-secondary);
+  color: var(--ink);
+  opacity: 1;
+}
+
+.interests {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 2.5rem;
+}
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+}
+.interest-card { }
+.interest-num {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.interest-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+.interest-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-tertiary);
+}
+
+.recent { padding: 5rem 0; }
+.recent-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.see-all {
+  font-size: 0.8rem;
+  color: var(--ink-tertiary);
+}
+.placeholder-text {
+  font-size: 0.95rem;
+  color: var(--ink-tertiary);
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+</style>

@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+
+const publications = [
+  {
+    title: 'Optimisation of NB-IoT deployment for smart energy distribution networks',
+    venue: 'EURASIP Journal on Wireless Communications and Networking (JWCN)',
+    year: '2018',
+    type: 'Journal',
+    description: 'Researched methods to optimise NB-IoT radio network configuration for smart grid outage restoration. Designed a packet scheduler for optimal performance. M.Sc. thesis work conducted at TNO, graded 9/10.',
+    tags: ['NB-IoT', 'Smart Grid', 'Packet Scheduling'],
+  },
+  {
+    title: 'Assessment of the Suitability of NB-IoT Technology for ORM in Smart Grids',
+    venue: 'EUCNC 2018 — Ljubljana, Slovenia',
+    year: '2018',
+    type: 'Conference',
+    description: 'Conference paper presenting findings on NB-IoT suitability for outage restoration management in smart grid scenarios. Accepted and presented at the European Conference on Networks and Communications.',
+    tags: ['NB-IoT', 'Smart Grid', 'ORM'],
+  },
+  {
+    title: 'Video Based Adaptive Road Traffic Signaling',
+    venue: 'IEEE ICDSC 2013 — Palm Springs, California',
+    year: '2013',
+    type: 'Conference',
+    description: 'B.Tech research on intelligent traffic signaling using computer vision and wireless sensor networks. Presented at the IEEE International Conference on Distributed Smart Cameras.',
+    tags: ['Computer Vision', 'Traffic Signaling', 'WSN'],
+  },
+];
+---
+<Base title="Research" description="Publications and research by Varun Nair on NB-IoT, smart grids, and network systems.">
+
+  <div class="container page-wrap">
+
+    <header class="page-header fade-up">
+      <p class="page-eyebrow">Research</p>
+      <h1>Publications</h1>
+      <p class="page-sub">
+        Academic and conference work from M.Sc. research at TU Delft / TNO and earlier.
+      </p>
+    </header>
+
+    <ul class="pub-list fade-up fade-up-1">
+      {publications.map(pub => (
+        <li class="pub-item">
+          <div class="pub-meta">
+            <span class:list={['pub-type', `pub-type--${pub.type.toLowerCase()}`]}>{pub.type}</span>
+            <span class="pub-year">{pub.year}</span>
+          </div>
+          <div class="pub-body">
+            <h2 class="pub-title">{pub.title}</h2>
+            <p class="pub-venue">{pub.venue}</p>
+            <p class="pub-desc">{pub.description}</p>
+            <div class="pub-tags">
+              {pub.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <hr />
+
+    <section class="awards-section fade-up fade-up-2">
+      <p class="page-eyebrow">Awards & recognition</p>
+      <ul class="award-list">
+        <li class="award-item">
+          <p class="award-title">Runner's Up — ICT Value Case Competition</p>
+        </li>
+        <li class="award-item">
+          <p class="award-title">Runner's Up — Technical Paper Presentation</p>
+        </li>
+        <li class="award-item">
+          <p class="award-title">Conference Travel Grant</p>
+        </li>
+        <li class="award-item">
+          <p class="award-title">Star Badge for Academic Excellence</p>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+</Base>
+
+<style>
+.page-wrap { padding: 5rem 0 4rem; }
+.page-header { margin-bottom: 4rem; }
+.page-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1rem;
+}
+.page-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+.page-sub { font-size: 1rem; color: var(--ink-tertiary); }
+
+.pub-list { list-style: none; }
+.pub-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.pub-item:last-child { border-bottom: 1px solid var(--rule); }
+
+.pub-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 0.2rem;
+}
+.pub-type {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--paper-secondary);
+  color: var(--ink-tertiary);
+  border: 1px solid var(--rule);
+  width: fit-content;
+}
+.pub-type--journal {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: #c5d0e8;
+}
+.pub-year { font-size: 0.75rem; color: var(--ink-tertiary); }
+
+.pub-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+.pub-venue {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.pub-desc {
+  font-size: 0.875rem;
+  color: var(--ink-tertiary);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.pub-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.awards-section { padding: 3rem 0; }
+.award-list { list-style: none; margin-top: 1.5rem; }
+.award-item {
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--rule);
+}
+.award-item:last-child { border-bottom: 1px solid var(--rule); }
+.award-title { font-size: 0.9rem; color: var(--ink-secondary); }
+
+@media (max-width: 560px) {
+  .pub-item { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+</style>

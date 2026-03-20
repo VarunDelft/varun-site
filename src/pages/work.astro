@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+
+const roles = [
+  {
+    company: 'KPN',
+    title: 'DevOps & Design Consultant',
+    period: 'Sep 2025 – present',
+    location: 'Amsterdam',
+    tags: ['Java 17', 'Spring Boot', 'Nokia FabriQ'],
+    summary: 'Consultant on KPN\'s FabriQ network transformation — a migration to a high-capacity Nokia metro and core network. Delivering impact analyses, low-level IT designs, and Java 17 backend development. Supporting the Ops team during incident resolution and vulnerability remediation.',
+  },
+  {
+    company: 'Vodafone Business',
+    title: 'Technical Solutions Consultant',
+    period: 'Jun 2025 – Aug 2025',
+    location: 'Newbury, UK',
+    tags: ['Agentic AI', 'Orchestration', 'COTS evaluation'],
+    summary: 'Led assessment of COTS orchestration platforms for automated service delivery across a multi-vendor network. Evaluated seven platforms including Ciena Blue Planet, ServiceNow, HP, Oracle, IBM. Researched the impact of GenAI and Agentic AI for network orchestration.',
+  },
+  {
+    company: 'KPN',
+    title: 'Lead Java Developer & DevOps Engineer',
+    period: 'Jun 2020 – May 2025',
+    location: 'Zoetermeer',
+    tags: ['Java 17', 'Spring Boot', 'Docker Swarm', 'Kubernetes', 'ELK', 'Jenkins'],
+    summary: 'Designed and built a multi-domain network provisioning system for KPN\'s fixed-core network. Led full DevSecOps lifecycle — architecture, development, testing, deployment, and monitoring. Tech stack: Java 17, Spring Boot, ActiveMQ, Camel, Angular 17, MySQL, Docker, Kubernetes/Helm, Ansible, SonarQube, Trivy, Semgrep, Grafana, ELK.',
+    featured: true,
+  },
+  {
+    company: 'KPN',
+    title: 'Business Analyst — RAN Automation',
+    period: 'Jul 2019 – Feb 2020',
+    location: 'The Hague',
+    tags: ['Business Analysis', 'Network Automation', 'RAN'],
+    summary: 'Designed high-level and low-level operational processes for automating alarm handling in KPN\'s Radio Access Network. Collaborated with cross-functional teams to integrate automation tooling.',
+  },
+  {
+    company: 'Tele2 Nederland',
+    title: 'Technical Consultant — SD-WAN',
+    period: 'Mar 2019 – May 2019',
+    location: 'Diemen',
+    tags: ['SD-WAN', 'Vendor Selection', 'RFI'],
+    summary: 'Defined business and technical requirements for SD-WAN solution selection at Tele2 B2B. Prepared vendor longlist, drafted an exhaustive RFI questionnaire.',
+  },
+  {
+    company: 'Prodapt — NFV Innovation Lab',
+    title: 'Pre-Sales Technical Lead',
+    period: 'Apr 2018 – Jan 2019',
+    location: 'Rijswijk',
+    tags: ['NFV', 'ETSI-MANO', 'OpenStack', 'CI/CD'],
+    summary: 'Led setup of a PoC environment for ETSI-based NFV modelling on Open Source MANO. Designed service models for virtual network services and integrated OpenStack IaaS with CI/CD.',
+  },
+  {
+    company: 'TNO',
+    title: 'Graduate Researcher — Mobile Networks',
+    period: 'Nov 2016 – Nov 2017',
+    location: 'The Hague',
+    tags: ['NB-IoT', 'Smart Grid', 'Research'],
+    summary: 'M.Sc. thesis on optimising NB-IoT radio network configuration for smart grid outage restoration. Designed a packet scheduler for optimal performance. Thesis graded 9/10; research accepted at EUCNC 2018 (Ljubljana) and published in JWCN.',
+  },
+  {
+    company: 'Jio',
+    title: 'Network Monitoring Engineer',
+    period: 'Jul 2014 – Aug 2015',
+    location: 'Mumbai',
+    tags: ['FTTH', 'Network KPIs', 'Automation'],
+    summary: 'Formulated KPIs for proactive and reactive monitoring of Reliance Jio\'s FTTH network. Automated KPI degradation triggers capturing nearly 70% of network outages.',
+  },
+];
+
+const skills = {
+  'Languages & frameworks': ['Java 17', 'Spring Boot', 'Angular 17', 'Python', 'Maven'],
+  'Cloud & infrastructure': ['AWS (SAA)', 'Docker', 'Kubernetes / Helm', 'Ansible', 'NGINX'],
+  'Observability & security': ['ELK Stack', 'Grafana', 'Datadog', 'SonarQube', 'Trivy', 'Semgrep'],
+  'Telecom domain': ['TMF', '3GPP', 'MEF', 'NFV / MANO', 'SD-WAN', 'NB-IoT', 'ActiveMQ'],
+  'CI/CD & tooling': ['Jenkins', 'Git', 'JFrog Artifactory', 'BrightSec'],
+};
+---
+<Base title="Work" description="Varun Nair's work experience, skills and career history.">
+
+  <div class="container page-wrap">
+
+    <header class="page-header fade-up">
+      <p class="page-eyebrow">Portfolio</p>
+      <h1>Work & experience</h1>
+      <p class="page-sub">10+ years across telecoms, cloud and software development.</p>
+    </header>
+
+    <section class="timeline fade-up fade-up-1">
+      {roles.map((role) => (
+        <article class:list={['role', { 'role--featured': role.featured }]}>
+          <div class="role-meta">
+            <p class="role-company">{role.company}</p>
+            <p class="role-period">{role.period}</p>
+            <p class="role-location">{role.location}</p>
+          </div>
+          <div class="role-content">
+            {role.featured && <span class="featured-badge">Key role</span>}
+            <h3 class="role-title">{role.title}</h3>
+            <p class="role-summary">{role.summary}</p>
+            <div class="role-tags">
+              {role.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <hr />
+
+    <section class="skills-section fade-up fade-up-2">
+      <p class="page-eyebrow">Skills</p>
+      <div class="skills-grid">
+        {Object.entries(skills).map(([cat, items]) => (
+          <div class="skill-group">
+            <p class="skill-cat">{cat}</p>
+            <div class="skill-tags">
+              {items.map(s => <span class="tag">{s}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="education-section fade-up fade-up-3">
+      <p class="page-eyebrow">Education</p>
+      <div class="edu-list">
+        <div class="edu-item">
+          <p class="edu-degree">M.Sc. Electrical Engineering — Telecommunications & Sensing Systems</p>
+          <p class="edu-school">Delft University of Technology · 2015–2017</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">B.Tech Electronics & Communications — First Class with Distinction</p>
+          <p class="edu-school">Delhi College of Engineering · 2010–2014</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</Base>
+
+<style>
+.page-wrap { padding: 5rem 0 4rem; }
+.page-header { margin-bottom: 4rem; }
+.page-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1rem;
+}
+.page-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+.page-sub { font-size: 1rem; color: var(--ink-tertiary); }
+
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.role {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+  transition: background 0.15s;
+}
+.role--featured {
+  background: var(--paper-secondary);
+  margin: 0 -1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  border-top: none;
+  margin-bottom: -1px;
+}
+
+.role-meta { padding-top: 0.15rem; }
+.role-company {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.role-period {
+  font-size: 0.75rem;
+  color: var(--ink-tertiary);
+  margin-bottom: 0.2rem;
+}
+.role-location {
+  font-size: 0.75rem;
+  color: var(--ink-tertiary);
+}
+
+.featured-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid #c5d0e8;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+}
+.role-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+.role-summary {
+  font-size: 0.9rem;
+  color: var(--ink-tertiary);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+.role-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.skills-section { padding: 3rem 0; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.skill-cat {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  margin-bottom: 0.75rem;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.education-section { padding: 3rem 0; }
+.edu-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.edu-degree { font-size: 0.95rem; font-weight: 400; color: var(--ink); margin-bottom: 0.2rem; }
+.edu-school { font-size: 0.8rem; color: var(--ink-tertiary); }
+
+@media (max-width: 640px) {
+  .role { grid-template-columns: 1fr; gap: 0.75rem; }
+  .role--featured { margin: 0; padding: 1.5rem 0; }
+}
+</style>

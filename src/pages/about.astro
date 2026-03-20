@@ -1,0 +1,167 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About" description="About Varun Nair — Solutions Architect, Java developer, telecoms specialist.">
+
+  <div class="container page-wrap">
+
+    <header class="page-header fade-up">
+      <p class="page-eyebrow">About</p>
+      <h1>Varun Nair</h1>
+      <p class="page-sub">Solutions Architect & Software Developer</p>
+    </header>
+
+    <div class="about-grid fade-up fade-up-1">
+
+      <aside class="about-sidebar">
+        <div class="sidebar-block">
+          <p class="sidebar-label">Based in</p>
+          <p>Zoetermeer, Netherlands</p>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">Currently at</p>
+          <p>KPN via Prodapt</p>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">Links</p>
+          <a href="https://github.com/VarunDelft" target="_blank" rel="noopener" class="sidebar-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/varunnair1/" target="_blank" rel="noopener" class="sidebar-link">LinkedIn ↗</a>
+          <a href="https://twitter.com/Var92" target="_blank" rel="noopener" class="sidebar-link">Twitter ↗</a>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">Certifications</p>
+          <p class="sidebar-cert">AWS Solutions Architect – Associate</p>
+          <p class="sidebar-cert">OCI AI Foundations 2025</p>
+          <p class="sidebar-cert">Hands-On AI: LLM-Powered Apps</p>
+          <p class="sidebar-cert">ELK Stack + Filebeat Masterclass</p>
+        </div>
+      </aside>
+
+      <div class="about-body prose">
+        <p>
+          I'm a Solutions Architect with over a decade of experience in the telecommunications
+          and connectivity domain. Over the years I've moved between roles — researcher,
+          business analyst, consultant, solution designer, pre-sales lead, DevOps engineer,
+          and hands-on developer. The thread connecting all of them is a preference for
+          being close to the work rather than directing it from a distance.
+        </p>
+        <p>
+          What drives me is the full product lifecycle: the design conversation, writing
+          the code, shipping it, and keeping it healthy in production. I think of this as
+          having "skin in the game" — the kind of involvement that makes better decisions
+          possible because you can't ignore the consequences of them.
+        </p>
+        <p>
+          My core technical background is Java (Spring Boot, microservices), cloud infrastructure
+          on AWS, and the operational side of telecom systems: network provisioning, orchestration,
+          assurance, and the standards — TMF, 3GPP, MEF — that sit underneath them. More recently
+          I've been spending time with Generative AI and exploring what agentic approaches
+          can realistically do for network automation.
+        </p>
+        <p>
+          I did my M.Sc. in Electrical Engineering (Telecommunications & Sensing Systems)
+          at TU Delft, which is also how I ended up in the Netherlands. Before that,
+          a B.Tech in Electronics & Communications from Delhi College of Engineering,
+          and some early-career time at Reliance Jio in Mumbai.
+        </p>
+
+        <h2>Outside work</h2>
+        <p>
+          I read a lot — history, geopolitics, technology writing, science fiction.
+          <em>The Three-Body Problem</em> remains a favourite. For balance: hiking,
+          cycling, tennis, and the occasional swim.
+        </p>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <section class="stats-row fade-up fade-up-2">
+      <div class="stat">
+        <span class="stat-n">10+</span>
+        <span class="stat-l">Years experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">5+</span>
+        <span class="stat-l">Operators worked with</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">5</span>
+        <span class="stat-l">Certifications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">3</span>
+        <span class="stat-l">Published papers</span>
+      </div>
+    </section>
+
+  </div>
+
+</Base>
+
+<style>
+.page-wrap { padding: 5rem 0 4rem; }
+.page-header { margin-bottom: 4rem; }
+.page-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1rem;
+}
+.page-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+.page-sub { font-size: 1rem; color: var(--ink-tertiary); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.sidebar-block { margin-bottom: 2rem; }
+.sidebar-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 0.4rem;
+}
+.sidebar-block p { font-size: 0.875rem; color: var(--ink-secondary); }
+.sidebar-link {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--ink-secondary);
+  margin-bottom: 0.25rem;
+}
+.sidebar-cert {
+  font-size: 0.8rem;
+  color: var(--ink-tertiary);
+  line-height: 1.5;
+  margin-bottom: 0.3rem !important;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 3rem 0 0;
+}
+.stat { display: flex; flex-direction: column; gap: 0.3rem; }
+.stat-n {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--ink);
+  line-height: 1;
+}
+.stat-l { font-size: 0.8rem; color: var(--ink-tertiary); }
+
+@media (max-width: 680px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-sidebar { position: static; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+</style>

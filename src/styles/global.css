@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --ink: #1a1916;
+  --ink-secondary: #5a5854;
+  --ink-tertiary: #9a9894;
+  --paper: #fafaf8;
+  --paper-secondary: #f2f1ee;
+  --paper-tertiary: #e8e7e3;
+  --accent: #2a52a0;
+  --accent-light: #e8edf7;
+  --rule: #e2e1dd;
+
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --max-w: 720px;
+  --max-w-wide: 1100px;
+  --nav-h: 64px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+p { color: var(--ink-secondary); }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+a:hover { opacity: 0.7; }
+
+img { max-width: 100%; display: block; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container--wide {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Prose styles for blog/publications */
+.prose h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+.prose h3 { font-size: 1.2rem; margin: 2rem 0 0.75rem; }
+.prose p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8; }
+.prose ul, .prose ol { margin: 0 0 1.5rem 1.5rem; color: var(--ink-secondary); }
+.prose li { margin-bottom: 0.4rem; line-height: 1.7; }
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-secondary);
+}
+.prose code {
+  font-size: 0.875em;
+  background: var(--paper-secondary);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+.prose pre {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prose pre code { background: none; border: none; padding: 0; color: inherit; }
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--paper-secondary);
+  color: var(--ink-tertiary);
+  border: 1px solid var(--rule);
+}
+.tag--accent {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: #c5d0e8;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.6s var(--ease) both;
+}
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.12s; }
+.fade-up-3 { animation-delay: 0.19s; }
+.fade-up-4 { animation-delay: 0.26s; }
